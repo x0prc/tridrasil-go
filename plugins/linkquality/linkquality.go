@@ -3,8 +3,7 @@ package linkquality
 import (
 	"sync"
 	"time"
-
-	"/types"
+	"tridrasil/types"
 )
 
 type PeerLink struct {
@@ -23,12 +22,11 @@ func (pl *PeerLink) UpdateMetrics(latency time.Duration, packetLoss float64) {
 
 func (pl *PeerLink) GetMetrics() types.LinkMetrics {
 	pl.mu.Lock()
-	defer p1.mu.Unlock()
-	return p1.Metrics
+	defer pl.mu.Unlock()
+	return pl.Metrics
 }
 
-func CalculatePathCost(latency time.Duration, packetLoss float64, hops int)
-float64 {
+func CalculatePathCost(latency time.Duration, packetLoss float64, hops int) float64 {
 	alpha := 1.0
 	beta := 10.0
 	gamma := 0.5
