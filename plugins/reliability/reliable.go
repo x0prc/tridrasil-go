@@ -8,19 +8,18 @@ import (
 
 // Message Sending
 type ReliableSender struct {
-	seq  uint64
-	unacked map[uint64][]byte
+	seq      uint64
+	unacked  map[uint64][]byte
 	sendFunc func([]byte) error
-	mu sync.Mutex
-	timeout time.Duration
+	mu       sync.Mutex
+	timeout  time.Duration
 }
 
-func NewReliableSender(sendFunc func([]byte) error, timeout time.Duration)
-*ReliableSender {
+func NewReliableSender(sendFunc func([]byte) error, timeout time.Duration) *ReliableSender {
 	return &ReliableSender{
-		unacked: make(map[uint64][]byte),
+		unacked:  make(map[uint64][]byte),
 		sendFunc: sendFunc,
-		timeout: timeout,
+		timeout:  timeout,
 	}
 }
 
@@ -43,8 +42,8 @@ func encodeUint64(n uint64) []byte {
 // Message Receiving
 type ReliableReceiver struct {
 	expectedSeq uint64
-	recvCh chan []byte
-	mu sync.Mutex
+	recvCh      chan []byte
+	mu          sync.Mutex
 	lastMessage []byte
 }
 
