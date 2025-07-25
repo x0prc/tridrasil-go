@@ -2,8 +2,7 @@ package reputation
 
 import (
 	"sync"
-
-	"/types"
+	"tridrasil/types"
 )
 
 type ReputationManager struct {
@@ -42,4 +41,3 @@ func (rm *ReputationManager) IsBlacklisted(nodeID types.NodeID) bool {
 	_, exists := rm.blacklist[nodeID]
 	return exists
 }
-
