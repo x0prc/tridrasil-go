@@ -10,16 +10,18 @@ import (
 func TestRateLimitTokenBucket(t *testing.T) {
 	tb := ratelimit.NewTokenBucket(2, 1)
 
-	if !tb.Allow() || !tb.Allow() {
-		t.Errorf("Allow first two requests")
-	} 
-
+	if !tb.Allow() {
+		t.Errorf("First request should be allowed")
+	}
+	if !tb.Allow() {
+		t.Errorf("Second request should be allowed")
+	}
 	if tb.Allow() {
-		t.Errorf("Block third immediate request")
+		t.Errorf("Third immediate request should be blocked")
 	}
 
 	time.Sleep(1 * time.Second)
 	if !tb.Allow() {
-		t.Errorf("Allow after refill")
+		t.Errorf("Request after refill should be allowed")
 	}
 }
