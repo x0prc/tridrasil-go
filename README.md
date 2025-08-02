@@ -2,6 +2,8 @@
 
 **Three Modular plugins to enhance Yggdrasil-based networks with advanced features.**
 
+[![Go Tests](https://github.com/x0prc/tridrasil-go/actions/workflows/go-tests.yml/badge.svg)](https://github.com/x0prc/tridrasil-go/actions/workflows/go-tests.yml)
+
 ## Features
 
 - **Reputation & Blacklisting:** Track peer behavior, adjust reputation, and automatically blacklist abusive nodes.
