@@ -1,4 +1,4 @@
-# Tridrasil
+# Tridrasil 🌿
 
 **Three Modular plugins to enhance Yggdrasil-based networks with advanced features.**
 
@@ -12,22 +12,18 @@
 - **Reliable Delivery:** Sequencing, acknowledgements, retransmission, and fragmentation for robust message delivery.
 
 ## Usage
+> [!NOTE]
+> Modify the `plugin-name` according to the feature you are using / testing.
+1. `cd plugins/plugin-name`
+2. `go build -o plugin-name`
 
-1. **Import the desired plugin(s) in your Go project:**
-    ```
-    import "tridrasil-plugins/plugins/reputation"
-    import "tridrasil-plugins/plugins/ratelimit"
-    import "tridrasil-plugins/plugins/linkquality"
-    import "tridrasil-plugins/plugins/reliable"
-    ```
-
-2. **Integrate with your peer management, routing, or message handling logic.**
+3. **Integrate with your peer management, routing, or message handling logic.**
     - See each plugin’s `README.md` for API details and examples.
 
 ## Tests
-
 - Each plugin includes unit tests.
-- Run all tests from the project root:
-    ```
-    go test ./...
-    ```
+- Run all tests from the each plugin's directory:
+```
+cd tests
+go test plugin-name
+```
