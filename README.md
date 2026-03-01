@@ -4,6 +4,8 @@
 
 [![Go Tests](https://github.com/x0prc/tridrasil-go/actions/workflows/go-tests.yml/badge.svg)](https://github.com/x0prc/tridrasil-go/actions/workflows/go-tests.yml)
 
+## [Additional Documentation](https://x0prc.github.io/notes/Notes/Published-Documentation/Tridrasil)
+
 ## Features
 
 - **Reputation & Blacklisting:** Track peer behavior, adjust reputation, and automatically blacklist abusive nodes.
